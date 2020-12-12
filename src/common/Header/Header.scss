@@ -1,0 +1,238 @@
+@import './../../assets/styles/base/variables';
+@import './../../assets/styles/base/mixins';
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  transition: 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  .main-container {
+    padding: 20px 121px 0;
+  }
+  &--container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0 15px;
+    border-bottom: 1px solid $blackColor;
+    transition: 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  }
+  &--nav-modal-btn {
+    font-size: 18px;
+    line-height: 32px;
+    text-transform: uppercase;
+    position: relative;
+    padding-right: 44px;
+    font-family: 'Teko';
+    margin-bottom: -21px;
+    color: $blackColor;
+    cursor: pointer;
+    &::before,
+    &::after {
+      background-color: #272727;
+      position: absolute;
+      right: 0;
+      content: '';
+      width: 20px;
+      height: 2px;
+      display: block;
+      top: 50%;
+      transition: 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+      transition-property: transform, background-color;
+    }
+
+    &::before {
+      transform: translate3d(0, -50%, 0) translate3d(0, -3px, 0);
+    }
+    &::after {
+      transform: translate3d(0, -50%, 0) translate3d(0, 3px, 0);
+    }
+  }
+
+  &__scrolled:not(.header__modal-open) {
+    background-color: rgba(255, 255, 255, 0.95);
+    .header {
+      &--container {
+        border: none;
+        padding: 10px 0 20px;
+      }
+    }
+  }
+
+  &__modal-open {
+    .header {
+      &--nav-modal-btn {
+        &::before,
+        &::after {
+          background-color: $whiteColor;
+        }
+        &::before {
+          transform: translate3d(0, -50%, 0) translate3d(0, 0, 0) rotate(-45deg);
+        }
+        &::after {
+          transform: translate3d(0, -50%, 0) translate3d(0, 0, 0) rotate(45deg);
+        }
+      }
+    }
+    .header-nav-modal {
+      pointer-events: all;
+      transform: scale(1);
+      opacity: 1;
+      border: 20px solid $whiteColor;
+    }
+  }
+
+  @include respond-to('medium') {
+    .main-container {
+      padding: 20px 50px 0;
+    }
+  }
+
+  @include respond-to('small') {
+    background-color: $whiteColor;
+    .main-container {
+      padding: 0 20px 0;
+    }
+    &--container {
+      padding: 10px 0;
+      border: none;
+      img {
+        width: 50%;
+      }
+    }
+    &--nav-modal-btn {
+      font-size: 21px;
+      line-height: 32px;
+      margin-bottom: -2px;
+      padding-right: 40px;
+    }
+    &__modal-open {
+      .header-nav-modal {
+        border: none;
+      }
+    }
+  }
+}
+
+.header-nav-modal {
+  margin-left: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: $blackColor;
+  transform: scale(1.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  z-index: -1;
+  display: flex;
+
+  .main-container {
+    padding: 0 100px;
+  }
+  &--container {
+    padding: 148px 0 50px;
+    position: relative;
+  }
+  &--navigation {
+    li {
+      text-align: right;
+      position: relative;
+      &:after {
+        content: '';
+        width: 100%;
+        height: 1px;
+        background-color: $greyColor;
+        position: absolute;
+        right: 0;
+        bottom: 10px;
+      }
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
+    }
+    a {
+      font-size: 110px;
+      line-height: 110px;
+      display: block;
+      img {
+        margin: 0 40px 16px 0;
+      }
+    }
+  }
+
+  a {
+    text-transform: uppercase;
+  }
+  path {
+    fill: $whiteColor;
+  }
+  &--countries,
+  &--social-links {
+    position: absolute;
+    background-color: $blackColor;
+    font-family: 'Arial';
+    font-size: 12px;
+    line-height: 19px;
+    font-weight: 700;
+  }
+
+  &--countries {
+    top: 100px;
+    left: 0;
+    svg {
+      margin-right: 6px;
+    }
+  }
+
+  &--social-links {
+    bottom: 77px;
+
+    left: 0;
+  }
+
+  &--heading {
+    color: $whiteColor;
+    opacity: 0.5;
+    font-size: 12px;
+    line-height: 19px;
+    font-weight: 700;
+  }
+  @include respond-to('small') {
+    &--countries,
+    &--social-links {
+      display: none;
+    }
+    &--navigation {
+      a {
+        font-size: 50px;
+        line-height: 50px;
+        img {
+          margin: 0 8px 5px 0;
+          width: 16px;
+        }
+      }
+      li {
+        &:after {
+          bottom: 5px;
+        }
+      }
+    }
+    .main-container {
+      padding: 0 21px;
+    }
+    &--container {
+      padding: 100px 0 50px;
+    }
+  }
+}
+
+body.modal-opened {
+  height: 100%;
+  overflow: hidden;
+}

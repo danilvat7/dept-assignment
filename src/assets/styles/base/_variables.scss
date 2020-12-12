@@ -1,0 +1,13 @@
+// colors
+$blackColor: #0e0e0e;
+$greyColor: #a3a3a3;
+$whiteColor: #fff;
+$blueColor: #1a18f7;
+$redColor: #ff2929;
+
+$breakpoints: (
+  'large': 1280px,
+  'medium': 992px,
+  'small': 768px,
+  'extra-small': 320px,
+) !default;

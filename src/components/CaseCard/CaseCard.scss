@@ -1,0 +1,99 @@
+@import './../../assets/styles/base/variables';
+@import './../../assets/styles/base/mixins';
+
+.case-card {
+  margin-bottom: 80px;
+  &__without-image {
+    padding: 23px 0 0;
+    margin-bottom: 40px;
+    border-top: 1px solid #dddddd;
+  }
+
+  &--holder {
+    cursor: pointer;
+    &:hover {
+      .case-card {
+        &--image {
+          &::before {
+            transform: scale(1.05);
+          }
+        }
+        &--btn-label {
+          transform: translate3d(10px, 0, 0);
+        }
+      }
+    }
+  }
+  &--image {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 13px;
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      box-shadow: 0 0 0 20px #fff inset;
+      z-index: 1;
+      transform: scale(1.15);
+      transition: transform 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  h4 {
+    font-size: 15px;
+    font-family: 'Arial';
+    color: #939393;
+    margin-bottom: 11px;
+    line-height: 30px;
+  }
+  p {
+    font-size: 24px;
+    color: #272727;
+    line-height: 30px;
+    margin-bottom: 14px;
+  }
+  h4,
+  &--btn {
+    text-transform: uppercase;
+    font-family: 'Arial';
+    font-weight: 700;
+  }
+  &--btn {
+    font-size: 14px;
+    color: $blueColor;
+    svg {
+      margin-right: 8px;
+    }
+    path {
+      fill: $blueColor;
+    }
+  }
+  &--btn-label {
+    display: inline-block;
+    transition: 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+    transition-delay: 75ms;
+  }
+
+  @include respond-to('small') {
+    margin-bottom: 49px;
+    &:not(.case-card__without-image) {
+      p {
+        font-size: 30px;
+      }
+    }
+
+    &--btn {
+      display: none;
+    }
+  }
+}

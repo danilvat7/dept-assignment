@@ -1,0 +1,88 @@
+@import './../../assets/styles/base/mixins';
+
+$bgColor: #f3f6f6;
+.clients {
+  background-color: $bgColor;
+  text-align: center;
+  padding: 79px 0 76px;
+  position: relative;
+  &:before {
+    content: '';
+    width: 9999px;
+    height: 100%;
+    top: 0;
+    right: 100%;
+    position: absolute;
+    background-color: $bgColor;
+  }
+  h3 {
+    font-size: 60px;
+    line-height: 62px;
+    margin-bottom: 19px;
+  }
+
+  p {
+    font-size: 17px;
+    line-height: 27px;
+    margin-bottom: 40px;
+    font-family: 'Arial';
+    width: 39%;
+    margin: 0 auto 122px;
+  }
+
+  &--logos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0 188px;
+  }
+  &--image-holder {
+    flex: 0 0 25%;
+    margin-bottom: 57px;
+  }
+
+  @include respond-to('large') {
+    &--logos {
+      padding: 0;
+    }
+  }
+
+  @include respond-to('medium') {
+    padding: 40px 0;
+    &:after {
+      content: '';
+      width: 20px;
+      height: 100%;
+      top: 0;
+      left: 100%;
+      position: absolute;
+      background-color: $bgColor;
+    }
+    p {
+      width: 90%;
+      margin-bottom: 82px;
+    }
+  }
+
+  @include respond-to('small') {
+    h3 {
+      font-size: 30px;
+      line-height: 32px;
+    }
+    p {
+      width: 100%;
+    }
+    &--logos {
+      max-height: 232px;
+      overflow: hidden;
+    }
+
+    &--image-holder {
+      flex: 0 0 50%;
+      margin-bottom: 50px;
+    }
+    img {
+      max-width: 80%;
+    }
+  }
+}

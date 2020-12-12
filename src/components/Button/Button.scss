@@ -1,0 +1,68 @@
+@import './../../assets/styles/base/variables';
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: $whiteColor;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 17px 45px;
+  border-radius: 0;
+
+  font-weight: 600;
+  position: relative;
+  &__dark {
+    background-color: $blackColor;
+  }
+  &__blue {
+    background-color: $blueColor;
+  }
+  &:before {
+    content: '';
+    display: block;
+    transform: translate3d(-50%, 200%, 0);
+    transition: 0.3s 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    transition-property: transform;
+  }
+  &--icon {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 15px;
+    line-height: 0;
+    margin-right: 10px;
+    transition: 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    opacity: 0;
+  }
+  &--label {
+    display: block;
+    transition: 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    transition-delay: 75ms;
+    backface-visibility: visible;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &:hover {
+    .btn {
+      &--icon {
+        opacity: 1;
+        transform: translate3d(10px, 0, 0);
+        transition-delay: 75ms;
+      }
+      &--label {
+        transform: translate3d(10px, 0, 0);
+        transition-delay: 0ms;
+      }
+    }
+  }
+
+  path {
+    fill: $whiteColor;
+  }
+}

@@ -1,0 +1,33 @@
+@import './../../assets/styles/base/variables';
+@import './../../assets/styles/base/mixins';
+
+.drop-down {
+  position: relative;
+  display: inline-flex;
+  cursor: pointer;
+  box-shadow: 0 1px 0 0 $blackColor;
+  font-size: 30px;
+  line-height: 31px;
+
+  &--select {
+    font-size: 17px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  &--icon {
+    margin-left: 10px;
+    svg {
+      transform: rotate(90deg);
+    }
+  }
+  @include respond-to('small') {
+    font-size: 24px;
+    line-height: 25px;
+  }
+}

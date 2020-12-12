@@ -1,0 +1,52 @@
+@import './../../assets/styles/base/mixins';
+
+.banner {
+  position: relative;
+  &--heading {
+    position: absolute;
+    top: 20%;
+    left: 7.2%;
+    h2 {
+      font-size: 400px;
+      line-height: 400px;
+    }
+  }
+
+  &--btn {
+    position: absolute;
+    bottom: 88px;
+    right: 99px;
+  }
+  @include respond-to('medium') {
+    h2 {
+      font-size: 200px;
+      line-height: 200px;
+    }
+
+    &--btn {
+      position: absolute;
+      bottom: 40px;
+      right: 40px;
+    }
+  }
+
+  @include respond-to('small') {
+    h2 {
+      font-size: 140px;
+      line-height: 140px;
+    }
+
+    &--btn {
+      position: static;
+      margin-top: 11px;
+      .btn {
+        width: 100%;
+      }
+    }
+    img {
+      width: 100vw;
+      max-width: initial;
+      margin-left: -20px;
+    }
+  }
+}

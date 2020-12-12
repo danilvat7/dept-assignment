@@ -1,0 +1,55 @@
+@import './../../assets/styles/base/mixins';
+
+.contact-block {
+  display: flex;
+  padding: 79px 100px 80px;
+  &--text {
+    font-size: 60px;
+    line-height: 61px;
+    flex: 0 0 28%;
+  }
+  &--form-holder {
+    flex: 0 0 72%;
+  }
+
+  @include respond-to('large') {
+    padding: 50px 0;
+  }
+
+  @include respond-to('medium') {
+    &--text {
+      flex: 0 0 35%;
+    }
+    &--form-holder {
+      flex: 0 0 65%;
+    }
+  }
+
+  @include respond-to('small') {
+    flex-wrap: wrap;
+    padding: 41px 0px 54px 19px;
+    &--text {
+      font-size: 30px;
+      line-height: 30px;
+      flex: 0 0 100%;
+      display: flex;
+      margin-bottom: 29px;
+      p {
+        margin-right: 3px;
+      }
+    }
+    &--form-holder {
+      flex: 0 0 100%;
+    }
+  }
+  @include respond-to('extra-small') {
+    padding: 41px 0 19px;
+    &--text {
+      font-size: 28px;
+      line-height: 30px;
+      p {
+        margin-right: 3px;
+      }
+    }
+  }
+}

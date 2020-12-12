@@ -1,0 +1,7 @@
+@import './../../assets/styles/base/mixins';
+.home {
+  padding-top: 20px;
+  @include respond-to('small') {
+    padding-top: 0;
+  }
+}

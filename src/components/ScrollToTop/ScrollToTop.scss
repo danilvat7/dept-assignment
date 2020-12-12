@@ -1,0 +1,12 @@
+@import './../../assets/styles/base/variables';
+
+.scroll-to-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $blueColor;
+  cursor: pointer;
+  path {
+    fill: $blueColor;
+  }
+}
