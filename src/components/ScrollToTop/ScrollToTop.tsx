@@ -4,6 +4,9 @@ import { ReactComponent as ArrowIcon } from './../../assets/icons/arrow.svg';
 
 import './ScrollToTop.scss';
 
+/**
+ * ScrollToTop component
+ */
 const ScrollToTop = () => {
   const scrollTo = () => {
     window['scrollTo']({ top: 0, behavior: 'smooth' });

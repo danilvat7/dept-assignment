@@ -9,6 +9,11 @@ type Props = {
   type?: 'button' | 'submit' | 'reset';
   styleType?: 'dark' | 'blue';
 };
+
+/**
+ * Button component
+ * Represents all app buttons
+ */
 const Button = ({
   label,
   onClick,

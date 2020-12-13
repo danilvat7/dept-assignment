@@ -11,6 +11,10 @@ interface FormValues {
   message: string;
 }
 
+/**
+ * InnnerForm component
+ * Represent form fields
+ */
 const InnerForm = (props: FormikProps<FormValues>) => {
   const { submitCount, errors } = props;
   return (
@@ -20,6 +24,7 @@ const InnerForm = (props: FormikProps<FormValues>) => {
           name
         </label>
         <Field name="name" id="name" />
+        {/* Shows error after submitting */}
         {!!submitCount && errors.name && (
           <div className="form--error">{errors.name}</div>
         )}
@@ -54,7 +59,11 @@ const InnerForm = (props: FormikProps<FormValues>) => {
   );
 };
 
+/**
+ * Initializes form
+ */
 const ContactForm = withFormik<{}, FormValues>({
+  // Init values
   mapPropsToValues: () => {
     return {
       name: '',
@@ -63,6 +72,7 @@ const ContactForm = withFormik<{}, FormValues>({
     };
   },
 
+  // Validation rules
   validate: (values: FormValues) => {
     let errors: FormikErrors<FormValues> = {};
     if (!values.name) {
@@ -78,6 +88,7 @@ const ContactForm = withFormik<{}, FormValues>({
     return errors;
   },
 
+  // Handles form submission
   handleSubmit: (values) => {
     console.log('Contact form: ', values);
   },

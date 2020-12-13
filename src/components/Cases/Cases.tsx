@@ -1,10 +1,15 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { selectFilteredCases } from '../../store/cases';
+
 import CaseCard from '../CaseCard/CaseCard';
 
 import './Cases.scss';
 
+/**
+ * Cases component
+ * Represents list of CaseCard components
+ */
 const Cases = () => {
   const cases = useSelector(selectFilteredCases);
 

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+
 import { ReactComponent as TriangleIcon } from './../../assets/icons/triangle.svg';
 import './DropDown.scss';
 
@@ -7,12 +8,17 @@ type Props = {
   options?: string[];
   onChange: (value: string) => void;
 };
+
+/**
+ * DropDown component
+ */
 const DropDown = ({ defaultValue, options = [], onChange }: Props) => {
   const [value, setValue] = useState('');
   useEffect(() => {
     setValue(defaultValue);
   }, [defaultValue]);
 
+  // Handles select change
   const onChanges = (value: string) => {
     onChange(value);
     setValue(value || defaultValue);

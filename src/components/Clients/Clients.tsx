@@ -36,6 +36,10 @@ const clientsLogos = [
   WalibiLogo,
   KLMLogo,
 ];
+
+/**
+ * Clients component
+ */
 const Clients = () => {
   return (
     <div className="clients">

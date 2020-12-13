@@ -1,3 +1,6 @@
+/**
+ * Fake Api
+ */
 import { mockCases } from './mockData';
 import { ICase } from '../interfaces/case';
 

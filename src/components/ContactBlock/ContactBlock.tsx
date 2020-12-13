@@ -2,7 +2,9 @@ import React from 'react';
 import ContactForm from '../ContactForm/ContactForm';
 
 import './ContactBlock.scss';
-
+/**
+ * ContactBlock component
+ */
 const ContactBlock = () => {
   return (
     <div className="contact-block">

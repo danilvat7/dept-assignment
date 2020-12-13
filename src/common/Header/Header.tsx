@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+
+import { ReactComponent as TriangleIcon } from './../../assets/icons/triangle.svg';
 import DeptLogo from './../../assets/images/dept-logo.png';
 import DeptLogoBlack from './../../assets/images/dept-logo-black.png';
 import TriangleBig from './../../assets/icons/triangle-big.png';
-import { Link, useLocation } from 'react-router-dom';
-import { ReactComponent as TriangleIcon } from './../../assets/icons/triangle.svg';
-import './Header.scss';
+
 import { NAVIGATION_ITEMS } from '../../constants';
+
+import './Header.scss';
 
 const socialLinks = [
   { name: 'facebook', url: '/' },
@@ -23,20 +26,26 @@ const countriesLinks = [
   { name: 'deutschland', url: '/' },
   { name: 'schweiz', url: '/' },
 ];
+/**
+ * Header component
+ */
 const Header = () => {
   const [isModalOpen, setModalState] = useState(false);
   const [isScrolled, setScrolled] = useState(false);
   const location = useLocation();
+
   useEffect(() => {
     setScrolled(!!document.body.scrollTop);
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // Changes isScrolled state
   const onScroll = (e: any) => {
     setScrolled(e.target.documentElement.scrollTop);
   };
 
+  // Handles open modal buttom
   const onNavModalBtnClick = () => {
     document.body.classList.toggle('modal-opened');
     setModalState(!isModalOpen);

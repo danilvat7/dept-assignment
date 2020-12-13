@@ -1,20 +1,27 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import DeptLogo from './../../assets/images/dept-logo.png';
 import FbIcon from './../../assets/icons/fb.png';
 import InstagramIcon from './../../assets/icons/instagram.png';
 import TwitterIcon from './../../assets/icons/twitter.png';
 
-import './Footer.scss';
-import { Link } from 'react-router-dom';
-import { NAVIGATION_ITEMS } from '../../constants';
 import ScrollToTop from '../../components/ScrollToTop/ScrollToTop';
+
+import { NAVIGATION_ITEMS } from '../../constants';
+
+import './Footer.scss';
 
 const sociaLinks = [
   { logo: FbIcon, url: '' },
   { logo: TwitterIcon, url: '' },
   { logo: InstagramIcon, url: '' },
 ];
+
+/**
+ * Footer component
+ * Represents app navigation, common company info
+ */
 const Footer = () => {
   return (
     <div className="main-container main-container__footer">
@@ -25,6 +32,7 @@ const Footer = () => {
               <img src={DeptLogo} alt="logo" />
             </Link>
           </div>
+
           <nav className="footer--navigation">
             <ul>
               {NAVIGATION_ITEMS.map((navItem, i) => {

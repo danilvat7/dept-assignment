@@ -1,8 +1,13 @@
 import React from 'react';
+
 import BannerImg from './../../assets/images/banner.png';
-import './Banner.scss';
 import Button from '../Button/Button';
 
+import './Banner.scss';
+
+/**
+ * Banner component
+ */
 const Banner = () => {
   return (
     <div className="banner">

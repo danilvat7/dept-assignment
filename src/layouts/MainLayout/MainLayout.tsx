@@ -2,6 +2,9 @@ import React from 'react';
 import Header from '../../common/Header/Header';
 import Footer from '../../common/Footer/Footer';
 
+/**
+ * MainLayout component
+ */
 const MainLayout: React.FunctionComponent<React.HtmlHTMLAttributes<any>> = (
   props
 ) => {

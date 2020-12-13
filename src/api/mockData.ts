@@ -1,3 +1,5 @@
+import { ICase } from '../interfaces/case';
+
 import BolImg from './../assets/images/bolcom.png';
 import ArlaImg from './../assets/images/arla.png';
 import ChocomelImg from './../assets/images/chocomel.png';
@@ -12,7 +14,6 @@ import PhilipsImg from './../assets/images/philips.png';
 import TuiImg from './../assets/images/tui.png';
 import ZalandoImg from './../assets/images/zalando.png';
 
-import { ICase } from '../interfaces/case';
 export const mockCases: ICase[] | any[] = [
   {
     image: BolImg,

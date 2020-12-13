@@ -1,13 +1,18 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { ICase } from '../../interfaces/case';
-import { useHistory } from 'react-router-dom';
 import { ReactComponent as TriangleIcon } from './../../assets/icons/triangle.svg';
 
 import './CaseCard.scss';
 type Props = {
   caseItem: ICase;
 };
+
+/**
+ * CaseCard component
+ * Represents case info
+ */
 const CaseCard = ({ caseItem }: Props) => {
   const history = useHistory();
   return (

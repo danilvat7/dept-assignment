@@ -1,4 +1,8 @@
 import React, { useEffect } from 'react';
+
+import { useDispatch } from 'react-redux';
+import { fetchCases } from '../../store/cases';
+
 import Banner from './../../components/Banner/Banner';
 import SortFiltersBar from './../../components/SortFiltersBar/SortFiltersBar';
 import Clients from './../../components/Clients/Clients';
@@ -6,14 +10,16 @@ import ContactBlock from './../../components/ContactBlock/ContactBlock';
 import Cases from '../../components/Cases/Cases';
 
 import './Home.scss';
-import { useDispatch } from 'react-redux';
-import { fetchCases } from '../../store/cases';
 
+/**
+ * Home component
+ */
 const Home = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchCases());
+    // eslint-disable-next-line
   }, []);
   return (
     <div className="home">
@@ -30,7 +36,6 @@ const Home = () => {
       <div className="home--clients">
         <Clients />
       </div>
-
       <div className="home--contact-form">
         <ContactBlock />
       </div>

@@ -1,4 +1,5 @@
 @import './variables';
+
 // Mixin to manage responsive breakpoints
 /// @param {String} $breakpoint - Breakpoint name
 @mixin respond-to($breakpoint) {
